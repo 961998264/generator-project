@@ -88,7 +88,7 @@ class init{
                sourceURL = LYM_TEMPLATE_PLUGIN_GIT
               break;
             case 'Component':
-               sourceURL = LYM_TEMPLATE_PLUGIN_GIT
+               sourceURL = LYM_TEMPLATE_COMPONENT_GIT
               break;
             default:
                sourceURL = LYM_TEMPLATE_ADMIN_GIT
@@ -154,9 +154,11 @@ class init{
               }
           } else {
               Log.error('错误提示：模版仓库地址获取失败')
+              this.spinner.stop()
           }
       } else {
           Log.error('错误提示：模版信息获取异常')
+          this.spinner.stop()
       }
   }
   /**
