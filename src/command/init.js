@@ -1,6 +1,6 @@
 
 const inquirer  = require('inquirer')
-const   {LYM_TEMPLATE_ADMIN_GIT,LYM_TEMPLATE_MOBILE_GIT,LYM_TEMPLATE_PLUGIN_GIT,LYM_TEMPLATE_CONPOMENT_GIT}   = require('../common/constant') 
+const   {LYM_TEMPLATE_ADMIN_GIT,LYM_TEMPLATE_MOBILE_GIT,LYM_TEMPLATE_PLUGIN_GIT,LYM_TEMPLATE_COMPOMENT_GIT}   = require('../common/constant') 
 const ora = require('ora'); 
 const { exec } = require('mz/child_process');
 const Log = require('../common/log');
@@ -70,7 +70,6 @@ class init{
                   this.projectName = anwers.name + '-bak'
               }
           }
-
           this.spinner = ora({
               spinner: 'dots',
               text: `开始下载 ${this.templateName} 框架模版，请耐心等待......`
@@ -88,7 +87,7 @@ class init{
                sourceURL = LYM_TEMPLATE_PLUGIN_GIT
               break;
             case 'Component':
-               sourceURL = LYM_TEMPLATE_COMPONENT_GIT
+               sourceURL = LYM_TEMPLATE_COMPOMENT_GIT
               break;
             default:
                sourceURL = LYM_TEMPLATE_ADMIN_GIT
@@ -120,29 +119,30 @@ class init{
                             text: `开始下载依赖，请耐心等待......`
                           }); 
                           if(anwers.autoInstall.indexOf('NPM') !== -1){
-                            Log.space(2);
+                            Log.space(1);
                             this.spinner.start()
                             await exec(`cd ${this.projectName} && npm install`)
-                            Log.info('依赖下载完成，进入项目并启动项目吧')
+                            Log.space(1)
+                            Log.info('Successfully npm install')
                             this.spinner.stop()
 
                           }else if(anwers.autoInstall.indexOf('YARN') !== -1){
-                            Log.space(2);
+                            Log.space(1);
                             this.spinner.start()
                             await exec(`cd ${this.projectName} && yarn install`)
-                            Log.info('依赖下载完成，进入项目并启动项目吧')
+                            Log.space(1)
+                            Log.info('Successfully yarn install')
                             this.spinner.stop()
                           }else{
-                            Log.space(2);
-                            Log.error('依赖下载失败，请自行下载');
-                            Log.info('cd '+this.projectName+'\n npm install 或 yarn install');
+                            Log.space(1);
+                            Log.info(' cd '+this.projectName+'\n npm install 或 yarn install');
                           }
                       }else{
                         Log.error('依赖下载失败，请自行下载');
-                        Log.info('cd '+this.projectName+'\n npm install 或 yarn install');
+                        Log.info(' cd '+this.projectName+'\n npm install 或 yarn install');
                       }
                      } catch (error) {
-                      console.log(error)
+                      Log.error(error)
                       Log.error('依赖下载失败，请自行下载');
                       Log.info('cd'+this.projectName+'\n npm install 或 yarn install');
                      }
