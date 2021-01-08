@@ -1,20 +1,64 @@
 {
-  "name": "create-lcs-app",
+  "name": "lym-create-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "基于Nodejs的前端脚手架",
+  "main": "",
+  "directories": {},
+  "bin": {
+    "lym": "./bin/lym"
+  },
+  "keywords": [
+    "nodejs",
+    "vue",
+    "cli",
+    "pwa"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "lym init"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/961998264/generator-project.git"
+    "url": "git+https://github.com/961998264/generator-project"
   },
-  "keywords": [],
-  "author": "",
+  "author": "961998264@qq.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/961998264/generator-project/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/961998264/generator-project#readme"
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "homepage": "",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.1.2",
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "connect-history-api-fallback": "^1.5.0",
+    "css-hot-loader": "^1.4.0",
+    "css-loader": "^1.0.0",
+    "dns": "^0.2.2",
+    "eslint": "^5.2.0",
+    "eslint-loader": "^2.1.0",
+    "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fs-extra": "^7.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^6.0.0",
+    "mocha": "^5.2.0",
+    "mz": "^2.7.0",
+    "node-sass": "^4.9.2",
+    "opn": "^5.3.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "ora": "^3.0.0",
+    "shelljs": "^0.8.2"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 5.0.0"
+  },
+  "devDependencies": {}
 }

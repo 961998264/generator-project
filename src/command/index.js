@@ -6,13 +6,11 @@
  */
 
 'use strict'
-const { checkVersion, checkGitInstalled, isOnline } = require('../common/util');
+const { checkVersion, isOnline } = require('../common/util');
 const LOG = require('../common/log');
 const program = require('commander')
-const tools = require('../common/util')
 isOnline().then( _ => {
   program.version(require('../package').version,'-v','-version')
-
   program
       .usage('<linyongming>')
 
