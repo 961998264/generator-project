@@ -39,5 +39,5 @@ isOnline().then( _ => {
     program.help()
   }
 } , () => {
-  LOG.error('错误提示：使用create-lcs-app初始化项目必须在有网络状态下')
+  LOG.error('错误提示：使用create-lym-app初始化项目必须在有网络状态下')
 })

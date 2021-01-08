@@ -12,7 +12,7 @@ const dns = require('dns');
 const fs = require('fs');
 const path = require('path')
 const efs = require('fs-extra');
-const { createLcsApp_NPM_REGISTRY,PROJECT_PACKAGE_JSON  } = require('./constant');
+const { createLymApp_NPM_REGISTRY,PROJECT_PACKAGE_JSON  } = require('./constant');
 const _ = require('lodash');
 /**
  * 删除指定目录文件
@@ -85,7 +85,7 @@ const tools = {
               'type': 'input',
               'name': 'name',
               'message': '请输入项目名称：',
-              'default': 'lcs-project'
+              'default': 'lym-project'
           }, {
               'type': 'input',
               'name': 'author',
@@ -146,21 +146,21 @@ const tools = {
 
 
     /**
-     * 检查create-lcs-app线上版本
+     * 检查create-lym-app线上版本
      */
     checkVersion: async () => {
         let spinner = ora().start();
         spinner.color = 'red';
-        spinner.text = '正在检查线上 create-lcs-app 包版本号.....'
+        spinner.text = '正在检查线上 create-lym-app 包版本号.....'
 
-        let packageInfo = await axios.get(createLcsApp_NPM_REGISTRY);
+        let packageInfo = await axios.get(createLymApp_NPM_REGISTRY);
 
         spinner.stop();
         if (packageInfo) {
             let lastVersion = packageInfo.data['dist-tags'].latest;
 
-            Log.info(`当前 create-lcs-app 最新版本号为 ${lastVersion},请及时更新`)
-            Log.info('欢迎使用 create-lcs-app 前端解决方案,作者LinYongMing，欢迎咨询')
+            Log.info(`当前 create-lym-app 最新版本号为 ${lastVersion},请及时更新`)
+            Log.info('欢迎使用 create-lym-app 前端解决方案,作者LinYongMing，欢迎咨询')
             Log.space(2)
         } else {}
     },
@@ -247,12 +247,12 @@ const tools = {
 
 
     /**
-     * @description: 检测是否存在create-lcs-app
+     * @description: 检测是否存在create-lym-app
      * @param {*}
      * @return {*}
      */ 
     localBinExists:()=> {
-      const localBinPathSegments = [process.cwd(), 'node_modules', '@lcs', 'create-lcs-app'];
+      const localBinPathSegments = [process.cwd(), 'node_modules', '@lym', 'create-lym-app'];
       return existsSync(join(...localBinPathSegments));
     },
 

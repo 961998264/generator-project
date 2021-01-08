@@ -1,6 +1,6 @@
 
 const inquirer  = require('inquirer')
-const   {LCS_TEMPLATE_ADMIN_GIT,LCS_TEMPLATE_MOBILE_GIT,LCS_TEMPLATE_PLUGIN_GIT,LCS_TEMPLATE_CONPOMENT_GIT}   = require('../common/constant') 
+const   {LYM_TEMPLATE_ADMIN_GIT,LYM_TEMPLATE_MOBILE_GIT,LYM_TEMPLATE_PLUGIN_GIT,LYM_TEMPLATE_CONPOMENT_GIT}   = require('../common/constant') 
 const ora = require('ora'); 
 const { exec } = require('mz/child_process');
 const Log = require('../common/log');
@@ -79,19 +79,19 @@ class init{
           let sourceURL ;
           switch (this.templateName.toLowerCase()) {
             case 'admin':
-              sourceURL = LCS_TEMPLATE_ADMIN_GIT
+              sourceURL = LYM_TEMPLATE_ADMIN_GIT
               break;
             case 'mobile':
-               sourceURL = LCS_TEMPLATE_MOBILE_GIT
+               sourceURL = LYM_TEMPLATE_MOBILE_GIT
               break;
             case 'Plugin':
-               sourceURL = LCS_TEMPLATE_PLUGIN_GIT
+               sourceURL = LYM_TEMPLATE_PLUGIN_GIT
               break;
             case 'Component':
-               sourceURL = LCS_TEMPLATE_PLUGIN_GIT
+               sourceURL = LYM_TEMPLATE_PLUGIN_GIT
               break;
             default:
-               sourceURL = LCS_TEMPLATE_ADMIN_GIT
+               sourceURL = LYM_TEMPLATE_ADMIN_GIT
               break;
           }
           if (sourceURL) {
