@@ -1,8 +1,8 @@
 {
-  "name": "lym-create-project",
+  "name": "create-lym-app",
   "version": "1.0.0",
   "description": "基于Nodejs的前端脚手架",
-  "main": "",
+  "main": "./src/common",
   "directories": {},
   "bin": {
     "lym": "./bin/lym"
