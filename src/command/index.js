@@ -10,7 +10,7 @@ const { checkVersion, isOnline } = require('../common/util');
 const LOG = require('../common/log');
 const program = require('commander')
 isOnline().then( _ => {
-  program.version(require('../package').version,'-v','-version')
+  program.version(require('../../package').version,'-v','-version')
   program
       .usage('<linyongming>')
 
@@ -19,7 +19,7 @@ isOnline().then( _ => {
   */
   program
       .command('init')
-      .description('项目初始化，可选择插件模版、组件模版、PC项目模版和H5模版，默认PC')
+      .description('项目初始化，可选择插件模版、组件模版、admin项目模版和H5模版，默认PC')
       .alias('i')
       .action( () => require('./init') )
 

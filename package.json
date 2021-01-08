@@ -5,7 +5,7 @@
   "main": "./src/common",
   "directories": {},
   "bin": {
-    "lym": "./bin/lym"
+    "create-lym-app": "./bin/create-lym-app"
   },
   "keywords": [
     "nodejs",
@@ -14,7 +14,7 @@
     "pwa"
   ],
   "scripts": {
-    "init": "lym init"
+    "init": "create-lym-app init"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,6 @@
   },
   "author": "961998264@qq.com",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -33,7 +30,7 @@
   },
   "homepage": "",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chai": "^4.1.2",
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
